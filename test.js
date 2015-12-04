@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var Deferred = require('./');
-var Promise = require('promise');
+var MyPromise = require('promise');
 
 test('constructs', function (t) {
 	t.ok(new Deferred() instanceof Deferred, 'constructs a new Deferred');
@@ -11,14 +11,15 @@ test('constructs', function (t) {
 	t.end();
 });
 
-test('Deferred has a reference to Promise', function (t) {
-	t.equal(Deferred.Promise, Promise, 'Deferred.Promise === Promise');
+test('uses the native promise by default', function (t) {
+	var deferred = Deferred();
+	t.ok(deferred.promise instanceof global.Promise, 'promise property is a Promise');
 	t.end();
 });
 
-test('has a promise', function (t) {
-	var deferred = Deferred();
-	t.ok(deferred.promise instanceof Promise, 'promise property is a Promise');
+test('optionally uses a custom promise', function (t) {
+	var deferred = Deferred(MyPromise);
+	t.ok(deferred.promise instanceof MyPromise, 'promise property is a MyPromise');
 	t.end();
 });
 

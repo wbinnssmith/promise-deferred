@@ -1,4 +1,22 @@
-#promise-deferred <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>
+# promise-native-deferred <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>
+
+This is a fork of [promise-deferred](https://github.com/ljharb/promise-deferred), but
+instead uses the environment's native Promise implementation instead of a polyfill. This
+means that browser tools won't unnecessarily bundle a Promise polyfill when one already
+exists or Promise is provided natively.
+
+## Usage
+
+`var deferred = new Deferred()`
+
+In order to use this module in environments without Promises, either polyfill ahead-of-time
+or pass your custom `Promise` during Deferred construction like so:
+
+`var deferred = new Deferred(MyPromise)`
+
+or simply:
+
+`var deferred = Deferred(MyPromise)`
 
 [![Build Status][travis-svg]][travis-url]
 [![dependency status][deps-svg]][deps-url]

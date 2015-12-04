@@ -1,67 +1,52 @@
 {
-	"name": "promise-deferred",
-	"version": "2.0.1",
-	"description": "A lightweight Deferred implementation, on top of Promises/A+",
-	"main": "index.js",
-	"scripts": {
-		"test": "npm run lint && node test.js && npm run coverage-quiet && npm run security",
-		"coverage": "covert test.js",
-		"coverage-quiet": "covert test.js --quiet",
-		"lint": "npm run jscs && npm run eslint",
-		"eslint": "eslint *.js",
-		"jscs": "jscs *.js",
-		"security": "nsp package"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/ljharb/promise-deferred.git"
-	},
-	"keywords": [
-		"promise",
-		"promises",
-		"deferred",
-		"deferreds",
-		"reject",
-		"resolve",
-		"async"
-	],
-	"author": "Jordan Harband",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/ljharb/promise-deferred/issues"
-	},
-	"homepage": "https://github.com/ljharb/promise-deferred",
-	"testling": {
-		"files": "test.js",
-		"browsers": [
-			"iexplore/6.0..latest",
-			"firefox/3.0..6.0",
-			"firefox/15.0..latest",
-			"firefox/nightly",
-			"chrome/4.0..10.0",
-			"chrome/20.0..latest",
-			"chrome/canary",
-			"opera/10.0..latest",
-			"opera/next",
-			"safari/4.0..latest",
-			"ipad/6.0..latest",
-			"iphone/6.0..latest",
-			"android-browser/4.2"
-		]
-	},
-	"dependencies": {
-		"promise": "^7.0.4"
-	},
-	"devDependencies": {
-		"tape": "^4.2.0",
-		"covert": "^1.1.0",
-		"jscs": "^2.1.0",
-		"eslint": "^1.1.0",
-		"@ljharb/eslint-config": "^1.0.4",
-		"nsp": "^1.0.3"
-	},
-	"engines": {
-		"node": ">= 0.4"
-	}
+  "name": "promise-native-deferred",
+  "version": "2.0.1",
+  "description": "A lightweight Deferred implementation, using native Promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && node test.js && npm run coverage-quiet",
+    "coverage": "covert test.js",
+    "coverage-quiet": "covert test.js --quiet",
+    "lint": "npm run jscs",
+    "jscs": "jscs *.js"
+  },
+  "repository": "github:wbinnssmith/promise-deferred",
+  "keywords": [
+    "promise",
+    "promises",
+    "deferred",
+    "deferreds",
+    "reject",
+    "resolve",
+    "async"
+  ],
+  "author": "Will Binns-Smith <wbinnssmith@gmail.com>",
+  "license": "MIT",
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+      "iexplore/6.0..latest",
+      "firefox/3.0..6.0",
+      "firefox/15.0..latest",
+      "firefox/nightly",
+      "chrome/4.0..10.0",
+      "chrome/20.0..latest",
+      "chrome/canary",
+      "opera/10.0..latest",
+      "opera/next",
+      "safari/4.0..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2"
+    ]
+  },
+  "devDependencies": {
+    "covert": "^1.1.0",
+    "jscs": "^2.1.0",
+    "promise": "^7.0.4",
+    "tape": "^4.2.0"
+  },
+  "engines": {
+    "node": ">= 0.4"
+  }
 }
-

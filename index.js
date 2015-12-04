@@ -1,10 +1,9 @@
 'use strict';
 
-var Promise = require('promise/lib/es6-extensions');
+var Deferred = function Deferred(Promise) {
+	if (!(this instanceof Deferred)) { return new Deferred(Promise); }
 
-var Deferred = function Deferred() {
-	if (!(this instanceof Deferred)) { return new Deferred(); }
-
+	Promise = Promise || global.Promise;
 	var self = this;
 	self.promise = new Promise(function (resolve, reject) {
 		self.resolve = resolve;
@@ -12,7 +11,5 @@ var Deferred = function Deferred() {
 	});
 	return self;
 };
-Deferred.Promise = Promise;
 
 module.exports = Deferred;
-
