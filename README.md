@@ -32,7 +32,7 @@ A lightweight Deferred implementation, on top of Promises/A+
 
 ## Examples
 ```js
-var Deferred = require('promise-deferred');
+var Deferred = require('promise-native-deferred');
 
 var deferred = new Deferred();
 
